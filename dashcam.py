@@ -14,7 +14,8 @@ if __name__ == '__main__':
     gpsp = gpsPoller()
     gpsp.start()
 
-    gpxp = gpxWriter(gpsp, "bla.gpx", 1 , 5)
+    filename=datetime.strftime(datetime.utcnow(),"%Y-%m-%d_%H-%M-%S.gpx")
+    gpxp = gpxWriter(gpsp, filename, 1 , 5, 10)
     gpxp.start()
 
     try:
